@@ -1,0 +1,55 @@
+//== COLORS
+//
+
+$altima-red: #d83359;
+$dark-grey: #777;
+$medium-grey: #555;
+$light-grey: #ccc;
+
+//** Background color for all overlays.
+$black-overlay: rgba(0,0,0,.75);
+
+//** Background color for `<body>`.
+$body-bg:               #fff !default;
+//** Global text color on `<body>`.
+$text-color:            $dark-grey !default;
+//** Global text color on dark background.
+$text-color--light:     $light-grey !default;
+//** Global textual link color.
+$link-color:            $altima-red !default;
+//** Global CTAs color.
+$cta-color:             $link-color !default;
+//** Global icons color.
+$icon-color:            $medium-grey !default;
+
+//** Global title color on light background.
+$title-color--dark: #222;
+//** Global title color on dark background.
+$title-color--light: #FFF;
+
+
+//== TYPOGRAPHY
+//
+
+//** Fonts sizes
+$font-size-h1: 6rem;
+$font-size-h2: 4rem;
+$font-size-h3: 2rem;
+$font-size-h4: 1.8rem;
+$font-size-base: 1.4rem;
+
+/* Poppins */
+@include font-face(Poppins, fonts/Poppins/Poppins-Light, 100, normal, ttf);
+@include font-face(Poppins, fonts/Poppins/Poppins-Regular, 300, normal, ttf);
+@include font-face(Poppins, fonts/Poppins/Poppins-Medium, 500, normal, ttf);
+@include font-face(Poppins, fonts/Poppins/Poppins-SemiBold, 600, normal, ttf);
+@include font-face(Poppins, fonts/Poppins/Poppins-Bold, 900, normal, ttf);
+
+/* Bitter */
+@include font-face(Bitter, fonts/Bitter/Bitter-Regular, 300, normal, ttf);
+@include font-face(Bitter, fonts/Bitter/Bitter-Italic, 300, italic, ttf);
+@include font-face(Bitter, fonts/Bitter/Bitter-Bold, 900, normal, ttf);
+
+//** Fonts Families
+$poppins-ff: "Poppins", "Helvetica", sans-serif;
+$bitter-ff: "Bitter", "Times New Roman", serif;

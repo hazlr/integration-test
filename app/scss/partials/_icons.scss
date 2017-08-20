@@ -1,0 +1,71 @@
+/* Altima Icons */
+@font-face {
+	font-family: "altimaIcons";
+	src: url('../../css/fonts/altimaIcons.eot');
+	src: url('../../css/fonts/altimaIcons.eot?#iefix') format('eot'),
+		url('../../css/fonts/altimaIcons.woff2') format('woff2'),
+		url('../../css/fonts/altimaIcons.woff') format('woff'),
+		url('../../css/fonts/altimaIcons.ttf') format('truetype'),
+		url('../../css/fonts/altimaIcons.svg#altimaIcons') format('svg');
+}
+
+.icon:before {
+	font-family: "altimaIcons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-angularjs:before {
+	content: "\E001";
+}
+
+.icon-check:before {
+	content: "\E002";
+}
+
+.icon-facebook:before {
+	content: "\E003";
+}
+
+.icon-git:before {
+	content: "\E004";
+}
+
+.icon-googleplus:before {
+	content: "\E005";
+}
+
+.icon-graph:before {
+	content: "\E006";
+}
+
+.icon-heart:before {
+	content: "\E007";
+}
+
+.icon-pinterest:before {
+	content: "\E008";
+}
+
+.icon-reactjs:before {
+	content: "\E009";
+}
+
+.icon-responsive:before {
+	content: "\E00A";
+}
+
+.icon-sass:before {
+	content: "\E00B";
+}
+
+.icon-twitter:before {
+	content: "\E00C";
+}

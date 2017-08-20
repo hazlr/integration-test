@@ -1,0 +1,36 @@
+<div class="container">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#/">Home</a> / <a href="#/blog">BLOG</a> / ARTICLE{{post.id}}
+        </li>
+    </ul>
+    <div class="section">
+        <div ng-hide="loading">
+            <h2 class="section__title">{{title}}</h2>
+            <h3 class="section__subTitle">Proin iaculis purus consequat sem cure</h3>
+            <p>{{content}}</p>
+
+            <h3>{{comments.length}} Comments</h3>
+            
+            <div ng-repeat="comment in comments | filter:{content:query} | orderBy:order">
+                <ng-comment comment="comment" select="selectComment()"></ng-comment>
+            </div>
+
+            <hr>
+
+            <form ng-submit="addComment()">
+                <h3>Write a comment</h3>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Username" ng-model="newComment.username"><br>
+                    <input class="form-control" type="text" placeholder="City" ng-model="newComment.city"><br>
+                    <input class="form-control" type="text" placeholder="Email" ng-model="newComment.email"><br>
+                    <textarea class="form-control form-control--text-area" placeholder="Please type your message..." ng-model="newComment.content"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn--flat btn--fw" type="submit" value="Send">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

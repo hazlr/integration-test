@@ -1,0 +1,237 @@
+//====================
+//   Title section
+//====================
+
+.titleSection{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 530px;
+    background: #000;
+    background: url('../img/section-title-bg.jpg') center/100% no-repeat;
+
+    @include image-2x('../img/section-title-bg@2x.jpg', 100%, 530px);
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,.75);
+        z-index: 0;
+    }
+    
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    &__title {
+        margin-top: 12rem;
+        margin-bottom: 4.1rem;
+        color: $title-color--light;
+        text-align: center;
+        line-height: 6.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -.3rem;
+
+        @include mobile {
+            font-size: 3.5rem;
+            line-height: 4rem;
+        }
+    }
+
+    &__subTitle {
+        color: $light-grey;
+        font-family: $bitter-ff;
+        font-weight: 100;
+        margin: 0;
+        margin-bottom: 5.5rem;
+
+        @include mobile {
+            font-size: 1.6rem;
+        }
+    }
+
+    @include mobile {
+        & .btn {
+            width: 100%;
+        }
+    }
+}
+
+//====================
+//   Just Relax section
+//====================
+
+.justRelax {
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    &__leftColumn {
+        position: relative;
+        flex: 1;
+        background-color: #e9e9e9;
+        color: #bebdbd;
+        overflow: hidden;
+        padding: 5.9rem 0 5.5rem 4.2rem;
+        text-align: right;
+        min-height: 38rem;
+
+        @include tablet {
+            text-align: center;
+        }
+
+        @include mobile {
+            text-align: center;
+            padding: 0;
+        }
+
+        & .icon-angularjs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: -8.7rem;
+            vertical-align: top;
+            font-size: 50.2rem;
+
+            @include tablet {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                margin-right: 0;
+                vertical-align: middle;
+                font-size: 27rem;
+                line-height: 38rem;
+                height: 100%;
+            }
+
+            @include mobile {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                margin-right: 0;
+                vertical-align: middle;
+                font-size: 23rem;
+                line-height: 38rem;
+                height: 100%;
+            }
+        }
+    }
+
+    &__rightColumn {
+        position: relative;
+        flex: 2;
+        background-color: #000;
+        overflow: hidden;
+        background: url('../img/just-relax-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include image-2x('../img/just-relax-background@2x.jpg', 100%, 100%);
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $black-overlay;
+            z-index: 0;
+        }
+
+        &__content {
+            position: relative;
+            margin: 10rem;
+            z-index: 1;
+
+            @include tablet {
+                margin: 5rem 10rem;
+            }
+            @include mobile {
+                margin: 6rem 3rem;
+            }
+        }
+
+        &__title {
+            font-family: $poppins-ff;
+            font-size: $font-size-h2;
+            line-height: 4.8rem;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 4.5rem;
+
+            @include mobile {
+                font-size: 3rem;
+                line-height: 3.8rem;
+                margin-bottom: 2rem;
+            }
+
+            & .title--red {
+                color: $altima-red;
+            }
+        }
+
+        &__body {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $text-color--light;
+
+            @include mobile {
+                font-size: 1.4rem;
+            }
+
+            & .bodyList {
+                padding: 0;
+                margin-top: 2.2rem;
+                margin-bottom: 5.1rem;
+                list-style-type: none;
+
+                &__item {
+                    
+                    &Icon {
+                        display: inline-block;
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        line-height: 3.2rem;
+                        color: $altima-red;
+                        text-align: center;
+                        margin-right: 2.1rem;
+                        margin-bottom: 1.1rem;
+                        border-radius: 50%;
+                        border: 1px solid $light-grey;
+                    }
+                }
+            }
+
+            @include mobile {
+                & .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

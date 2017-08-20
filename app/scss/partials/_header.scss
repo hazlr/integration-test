@@ -1,0 +1,91 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 11.5rem;
+    background: #fff;
+
+    @include tablet {
+        height: auto;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        
+        @include tablet {
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        @include mobile {
+            padding: 0 3rem;
+        }
+    }
+
+    &__mobile-menu {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__logo{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: $poppins-ff;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        color: $medium-grey;
+        margin-left: .6rem;
+
+        & a {
+            color: $medium-grey;
+        }
+    }
+
+    @include mobile {
+        &__menu {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}
+
+.mainNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    flex-flow: row nowrap;
+
+    &__listItem {
+        
+        &:not(:last-child) {
+            margin-right: 4rem;
+        }
+
+        &__link {
+        font-size: $font-size-base;
+        font-family: $poppins-ff;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $dark-grey;
+        transition: color 600ms ease;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}

@@ -1,0 +1,485 @@
+// @include font-face(Poppins, fonts/Poppins);
+// @include font-face(Bitter, fonts/Bitter);
+
+html {
+    font-size: 62.5%;
+    /* 62.5% of 16px = 10px */
+}
+
+body {
+    font-family: $bitter-ff;
+    font-size: $font-size-base;
+    color: $text-color;
+    background-color: #fff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+//===============
+//  LINKS
+//===============
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-color;
+    text-decoration: none;
+  }
+}
+
+//===============
+//  HEADINGS
+//===============
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $poppins-ff;
+    color: $title-color--dark;
+}
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+  cursor: pointer;
+}
+
+//===============
+//  BUTTONS
+//===============
+
+.btn {
+    display: inline-block;
+    font-family: $poppins-ff;
+    font-size: 1.6rem;
+    line-height: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -.14rem;
+    color: #fff;
+    background-color: $altima-red;
+    padding: 0 3.9rem;
+    border-radius: 6rem;
+    transition: background-color 600ms ease, color 600ms ease;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.7);
+    }
+
+    &--flat {
+        box-shadow: none;
+    }
+
+    &--fw {
+        width: 100%;
+
+        @include desktop{
+            max-width: 32rem;
+        }
+    }
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    background-image: none;
+    border: 2px solid $light-grey;
+    color: $text-color;
+    font-family: $bitter-ff;
+    font-size: 1.5rem;
+    line-height: 1.467;
+    padding: .8rem 1.2rem;
+    height: 4.2rem;
+    border-radius: .6rem;
+    box-shadow: none;
+    -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+
+    @include desktop{
+        max-width: 50%;
+    }
+
+    &:focus {
+        border-color: $dark-grey;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &--text-area {
+        min-height: 15rem;
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+//===============
+//  LAYOUT
+//===============
+
+.loader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.9);
+    z-index: 3;
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 10rem;
+  width: 10rem;
+  transform-origin: center center;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: $altima-red;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+
+//loader animations
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+//IE11 flexbox min-height fix
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+//IE11 flexbox min-height fix
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+//IE11 flexbox min-height fix
+.mainWrapper {
+    flex: 1;
+}
+
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.breadcrumb {
+    font-size: 1.6rem;
+    font-family: $poppins-ff;
+    margin: 3rem 0;
+    padding: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+.section {
+    padding: 9.9rem 0;
+
+    @include mobile {
+        padding: 6rem 0;
+    }
+}
+
+.section__title {
+    color: $title-color--dark;
+    font-family: $poppins-ff;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -.3rem;
+    margin: 0;
+    margin-bottom: 2rem;
+
+    @include mobile {
+        font-size: 3rem;
+    }
+}
+
+.section__subTitle {
+    color: $text-color;
+    font-family: $bitter-ff;
+    font-weight: 100;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 8.6rem;
+
+    @include mobile {
+        font-size: 1.6rem;
+        margin-bottom: 4.3rem;
+    }
+}
+
+//===============
+//  FLEX ITEMS
+//===============
+
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    &__flexItem {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+        margin: 0 1rem;
+        text-align: center;
+
+        @include mobile {
+            &+.flexContainer__flexItem {
+                margin-top: 2rem;
+            }
+        }
+
+        &__icon {
+            display: inline-block;
+            font-size: 5.1rem;
+            margin: 0;
+            margin-bottom: 3.8rem;
+
+            height: 5.1rem;
+            width: 5.1rem;
+            color: #000;
+
+            &.icon--circled {
+                margin-bottom: 2rem;
+                height: 8.8rem;
+                width: 8.8rem;
+                line-height: 8.8rem;
+                font-size: 5.7rem;
+                color: $dark-grey;
+                background-color: #fff;
+                border: 3px solid $dark-grey;
+                border-radius: 50%;
+            }
+        }
+
+        &__title {
+            margin: 0;
+            margin-bottom: 1.9rem;
+            text-transform: uppercase;
+            letter-spacing: -.1rem;
+        }
+    }
+}
+
+//===============
+//  PREFOOTER
+//===============
+
+.preFooter {
+    position: relative;
+    height: 25rem;
+    padding: 7rem 0;
+    text-align: center;
+    background-color: $altima-red;
+
+    @include mobile {
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    &__title {
+        font-family: $poppins-ff;
+        font-size: $font-size-h2;
+        line-height: 4.8rem;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        margin-bottom: 3.3rem;
+
+        @include tablet {
+            font-size: 3rem;
+            line-height: 3.8rem;
+        }
+
+        @include mobile {
+            font-size: 3rem;
+            line-height: 3.8rem;
+        }
+    }
+
+    &__cta {
+        display: inline-block;
+        font-family: $poppins-ff;
+        font-size: 1.8rem;
+        line-height: 4.7rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        color: #fff;
+        padding: 0 2.9rem;
+        background-color: #3e3e3e;
+        border: 1px solid #fff;
+        border-radius: .4rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border: 3px solid #fff;
+        }
+    }
+}
+
+//===============
+//  FOOTER
+//===============
+
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 5.5rem;
+    padding-bottom: 8rem;
+
+    @include mobile {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2.25rem;
+        padding-bottom: 4rem;
+    }
+
+    &__copyright {
+        font-family: $poppins-ff;
+        font-size: $font-size-base;
+        line-height: 2.2rem;
+        color: $medium-grey;
+        margin-right: 7.6rem;
+
+        @include mobile {
+            margin-right: 0;
+        }
+    }
+
+    & .socialLinks {
+
+        &__list {
+            padding: 0;
+            list-style-type: none;
+
+            &Item {
+                display: inline-block;
+            }
+
+            &Item+.socialLinks__listItem {
+                margin-left: 1rem;
+            }
+        }
+
+        &__icon {
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            line-height: 4rem;
+            font-size: 2rem;
+            text-align: center;
+            transition: background-color 600ms ease;
+
+            &:hover {
+                &.twitter {
+                    background-color: #00aced;
+                }
+                &.facebook {
+                    background-color: #3b5998;
+                }
+                &.pinterest {
+                    background-color: #cb2028;
+                }
+                &.googleplus {
+                    background-color: #da2713;
+                }
+            }
+        }
+    }
+}
+
+// body {
+//   background: url(http://griddle.it/940-12-20) repeat-y center top;
+// }
