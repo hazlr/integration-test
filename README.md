@@ -11,11 +11,16 @@ These instructions will get you a copy of the project up and running on your loc
 Make sure that you've installed Node and npm before attempting to install gulp.
 
 ```sh
-node --version
+node -v
 ```
 ```sh
-npm --version
+npm -v
 ```
+
+
+*If not, npm is distributed with Node.js- which means that when you download Node.js, you automatically get npm installed on your computer.*
+
+Click on the following link to install Node.js and npm on your machine: https://nodejs.org/en/
 
 #### Install the `gulp` command
 
@@ -25,7 +30,7 @@ npm install --global gulp-cli
 
 ## Installing
 
-How to get a development env running?
+#### How to get a development env running?
 
 Just, run this command and you will be ready to go
 
