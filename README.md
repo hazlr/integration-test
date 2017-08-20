@@ -20,7 +20,7 @@ npm -v
 
 *If not, npm is distributed with Node.js- which means that when you download Node.js, you automatically get npm installed on your computer.*
 
-Click on the following link to install Node.js and npm on your machine: https://nodejs.org/en/
+Click [here](https://nodejs.org/en/) to install Node.js and npm on your machine.
 
 #### Install the `gulp` command
 
