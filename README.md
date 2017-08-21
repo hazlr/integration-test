@@ -1,3 +1,5 @@
+<img align="center" src="http://www.cbnews.fr/var/media/hit/original/1540500701_logo-altima.jpg" width="250" alt="Altima">
+
 # SPA Integration Test
 This test consists in integrating a SPA (Single Page Application) which mockup has been made and provided by Altima°.
 
@@ -35,6 +37,8 @@ npm install --global gulp-cli
 Just, run this command and you will be ready to go *(this may take a while depending on your machine & download speed)*
 
 ```
+git clone https://github.com/hazlr/integration-test.git
+cd integration-test
 npm i
 ```
 
@@ -51,6 +55,9 @@ gulp run:dev
 ```
 gulp run:prod
 ```
+# Demo
+
+Click [here](https://hazlr.github.io/integration-test/dist/#/) to see live demo.
 
 ## Built With
 
