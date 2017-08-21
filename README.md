@@ -70,9 +70,9 @@ Click [here](https://hazlr.github.io/integration-test/dist/#/) to see live demo.
 I use [Git](https://git-scm.com/documentation) for versioning.
 
 
-## Authors
+## Author
 
-* **Adel Ben Massaoud** - *Initial work* - (https://github.com/hazlr/)
+* **Adel Ben Massaoud** - (https://github.com/hazlr/)
 
 
 ## License
