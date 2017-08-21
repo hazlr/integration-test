@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test d'intégration Altima</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body ng-app="monApp">
+    <!-- IE11 flexbox min-height fix -->
+    <div class="wrapper">
+        <div class="page">
+
+            <header class="header">
+                <div class="header__container container">
+                
+                    <nav class="header__mobile-menu" role="navigation">
+                        <div class="burger-menu">
+                            <input type="checkbox" class="burger-menu__input"/>
+
+                            <span class="burger-menu__span"></span>
+                            <span class="burger-menu__span"></span>
+                            <span class="burger-menu__span"></span>
+                            <ul id="menu" class="burger-menu__list">
+                                <li class="burger-menu__list__item"><a href="#/">Home</a></li>
+                                <li class="burger-menu__list__item"><a href="#/about">About</a></li>
+                                <li class="burger-menu__list__item"><a href="#/blog">Blog</a></li>
+                                <li class="burger-menu__list__item"><a href="#/">Portfolio</a></li>
+                                <li class="burger-menu__list__item"><a href="#/">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="header__logo">
+                        <img src="img/altima-logo.png" srcset="img/altima-logo.png 1x, img/altima-logo@2x.png 2x" alt="Logo Altima" width="50" height="50">
+                        <h1 class="header__title"><a href="#/">Test d'intégration</a></h1>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="mainNavigation">
+                            <li class="mainNavigation__listItem"><a class="mainNavigation__listItem__link" href="#/">Home</a></li>
+                            <li class="mainNavigation__listItem"><a class="mainNavigation__listItem__link" href="#/about">About</a></li>
+                            <li class="mainNavigation__listItem"><a class="mainNavigation__listItem__link" href="#/blog">Blog</a></li>
+                            <li class="mainNavigation__listItem"><a class="mainNavigation__listItem__link" href="#/">Portfolio</a></li>
+                            <li class="mainNavigation__listItem"><a class="mainNavigation__listItem__link" href="#/">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="mainWrapper">
+                <section class="titleSection">
+                    <div class="titleSection__container container">
+                        <h1 class="titleSection__title">Creative Digital<br>Solutions</h1>
+                        <h3 class="titleSection__subTitle">Proin iaculis purus consequat sem cure.</h3>
+                        <a href="#/" class="btn">View Portfolio</a>
+                    </div>
+                </section>
+                <div class="loader" ng-show="loading">
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+                <div ng-view></div>
+            </div>
+
+            <section class="preFooter">
+                <div class="container">
+                    <div class="preFooter__title">
+                        Ready to talk about your next project?
+                    </div>
+                    <a href="#/" class="preFooter__cta">Contact Us</a>
+                </div>
+            </section>
+
+            <footer class="footer container">
+                <div class="footer__copyright">
+                    <p>© Copyright 2017 altima</p>
+                </div>
+                <div class="footer__socialLinks">
+                    <ul class="socialLinks__list">
+                        <li class="socialLinks__listItem">
+                            <a class="socialLinks__icon twitter" href="#/" target="_blank">
+                                <i class="icon icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks__listItem">
+                            <a class="socialLinks__icon facebook" href="#/" target="_blank">
+                                <i class="icon icon-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks__listItem">
+                            <a class="socialLinks__icon pinterest" href="#/" target="_blank">
+                                <i class="icon icon-pinterest"></i>
+                            </a>
+                        </li>
+                        <li class="socialLinks__listItem">
+                            <a class="socialLinks__icon googleplus" href="#/" target="_blank">
+                                <i class="icon icon-googleplus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+
+        </div> <!-- /.page-->
+    </div> <!-- /.wrapper-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.min.js"></script>
+    <script src="scripts/main.min.js"></script>
+</body>
+
+</html>

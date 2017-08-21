@@ -1,0 +1,24 @@
+<div class="container">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#/" >Home</a> / Blog
+        </li>
+    </ul>
+    
+    <section class="blogPosts__section">
+        <h2 class="blogPosts__section__title">BLOG</h2>
+        <h3 class="blogPosts__section__subTitle">Proin iaculis purus consequat sem cure</h3>
+        <div ng-hide="loading">
+            <div class="blogPosts__list">
+                <div class="blogPosts__listItem" ng-repeat="post in posts">
+                    <a href="#/blog/article{{post.id}}">
+                        <h3 class="blogPosts__listItem__title">{{post.name}}</h1>
+                        <img class="blogPosts__listItem__img" src="http://placehold.it/440x320" alt="Blog post thumbnail">
+                        <p class="blogPosts__listItem__body">{{post.content | limitTo:249}}</p>
+                        <p class="blogPosts__listItem__comments">{{post.comments.length}} Comment(s)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
