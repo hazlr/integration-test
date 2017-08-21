@@ -143,7 +143,7 @@ return gulp.src('app/img/icons/*.svg')
     .pipe(iconfontCss({
         fontName: fontName,
         targetPath: '../../scss/partials/_icons.scss', //Relative to dist
-        fontPath: '../../css/fonts/' //Relative to targetPath
+        fontPath: 'fonts/' //Relative to targetPath
         }))
     .pipe(iconfont({
             fontName: fontName,
