@@ -211,6 +211,6 @@ gulp.task('run:prod' , (callback) => {
         callback)
 });
 
-gulp.task('default', ['browserSync-prod'], () => {
+gulp.task('default', ['run:dev'], () => {
     
 });
