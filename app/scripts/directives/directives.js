@@ -5,6 +5,6 @@ app.directive('ngComment', function(){
             comment : '='
         },
         restrict: 'E',
-        templateUrl: 'partials/_comment.html'
+        templateUrl: 'partials/comment.html'
     }
 })
