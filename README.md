@@ -32,18 +32,24 @@ npm install --global gulp-cli
 
 #### How to get a development env running?
 
-Just, run this command and you will be ready to go
+Just, run this command and you will be ready to go *(this may take a while depending on your machine & download speed)*
 
 ```
 npm i
 ```
 
-## Deployment
-
-#### How to deploy this on a live system ?
+Once all needed packages are installed, please run the following command to start a local Dev Server:
 
 ```
-gulp build
+gulp run:dev
+```
+
+## Build
+
+#### How to test production files from dist/ folder ?
+
+```
+gulp run:prod
 ```
 
 ## Built With
