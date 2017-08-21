@@ -14,7 +14,7 @@
                     <a href="#/blog/article{{post.id}}">
                         <h3 class="blogPosts__listItem__title">{{post.name}}</h1>
                         <img class="blogPosts__listItem__img" src="http://placehold.it/440x320" alt="Blog post thumbnail">
-                        <p class="blogPosts__listItem__body">{{post.content}}</p>
+                        <p class="blogPosts__listItem__body">{{post.content | limitTo:249}}</p>
                         <p class="blogPosts__listItem__comments">{{post.comments.length}} Comment(s)</p>
                     </a>
                 </div>
