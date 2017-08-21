@@ -22,8 +22,8 @@ const gulp = require('gulp'),
 //== DEV tasks
 //
 
-// Serve files from the dev folder of this project
-gulp.task('browserSync', () => {
+// Serve files from the app/ folder of this project
+gulp.task('browserSync-dev', () => {
     browserSync.init({
         server: "app"
     });
@@ -73,7 +73,7 @@ gulp.task('json', () => {
         .pipe(gulp.dest('dist/json'));
 });
 
-gulp.task('watch', ['browserSync','sass'], () => {
+gulp.task('watch', ['browserSync-dev','sass'], () => {
     /* Watch scss, run the sass task on change. */
     gulp.watch('app/scss/**/*.scss', ['sass'])
     .on('change', function(event){
@@ -91,17 +91,29 @@ gulp.task('watch', ['browserSync','sass'], () => {
     });
 });
 
+//Run DevServer with liveReload
+gulp.task('run:dev' , (callback) => {
+    runSequence(
+        ['sass','browserSync-dev','watch'],
+        callback)
+});
 
 //== OPTIMIZATION & BUILD tasks
 //
 
 // Combines JS & CSS files by file type
 gulp.task('useref', () => {
-    gulp.src('app/*.html')
+    gulp.src('app/**/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('dist'));
+});
+
+//Retrieves JSON file without treatment
+gulp.task('json', () => {
+    gulp.src('app/**/*.json')
+    .pipe(gulp.dest('dist'));
 });
 
 //Optimizes images
@@ -151,9 +163,9 @@ return gulp.src('app/img/icons/*.svg')
 // Minifies all fonts
 gulp.task('fontsmin',['iconfont'], () => {
     return gulp.src('app/css/fonts/**/*.{ttf,eot, woff,woff2}')
-        .pipe(changed('dist/fonts'))
+        .pipe(changed('dist/css/fonts'))
         .pipe(fontmin())
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('dist/css/fonts'));
 })
 
 //Converts images to WebP
@@ -180,18 +192,25 @@ gulp.task('clean:dist', (callback) => {
     return del(['dist/**/*', '!dist/img', '!dist/img/**/*'], callback)
 });
 
-//Build production folder
-gulp.task('build', (callback) => {
-    runSequence('clean:dist',
-        ['sass', 'useref', 'imgOptim','iconfont'],
-        ['fontsmin','webp','gzip'],
-        callback
-    )
+//== PROD tasks
+//
+
+// Serve files from the dist/ folder of this project
+gulp.task('browserSync-prod', () => {
+    browserSync.init({
+        server: "dist"
+    });
 });
 
-gulp.task('default', (callback) => {
-    runSequence(
-        ['sass','browserSync','watch'],
-        callback
-    )
+//Build production folder & Run ProdServer
+gulp.task('run:prod' , (callback) => {
+    runSequence('clean:dist',
+        ['sass', 'json', 'useref', 'imgOptim','iconfont'],
+        ['fontsmin','webp','gzip'],
+        'browserSync-prod',
+        callback)
+});
+
+gulp.task('default', () => {
+    
 });
